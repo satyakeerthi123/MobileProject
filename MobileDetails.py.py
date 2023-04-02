@@ -69,8 +69,8 @@ if uploaded_file is not None:
         st.write(data[(data.RAM >6 ) & (data.Battery> 4000)])
     if st.checkbox("show number of mobiles with STORAGE above 64"):
         st.write(data[data.Storage > 64])
-    if st.checkbox("show the standard deviation of the Camera column"):
-        st.write(data.Camera.std())
+    if st.checkbox("show the mean of the Camera column"):
+        st.write(data.groupby('Camera').mean())
     if st.checkbox("show number of mobiles with brand SAMSUNG and battery above 4500"):
         st.write(data[(data['Brand'] =='Samsung') & (data.Battery > 4500)])
     if st.checkbox("show number of mobiles with brand VIVO and RAM above 4"):
