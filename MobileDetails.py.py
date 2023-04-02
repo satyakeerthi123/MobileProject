@@ -67,16 +67,16 @@ if uploaded_file is not None:
         st.write(data[data.RAM > 6])
     if st.checkbox("show number of mobile with RAM above 6 GB and BATTERY above 4000"):
         st.write(data[(data.RAM >6 ) & (data.Battery> 4000)])
-    if st.checkbox("show number of mobiles with STORAGE above 64 and SCREENSIZE above 6"):
-        st.write(data[(data.Storage > 64) & (data.ScreenSize > 6)])
-    if st.checkbox("show number of mobiles below the price of 800($) dollars"):
-        st.write(data[data['Price'] < 800])
-    if st.checkbox("show number of mobiles with brand SAMSUNG and PRICE above $500 dollars"):
-        st.write(data[(data['Brand'] =='Samsung') & (data.Price >500)])
-    if st.checkbox("show number of mobiles with brand VIVO and screensize above 6.5"):
-        st.write(data[(data['Brand']=='Vivo')&(data.ScreenSize > 6.5)])
-    if st.checkbox("show number of mobiles with battery capacity above 4500 and price below 700 dollars"):
-        st.write(data[(data.Battery >4500) & (data.Price < 700)])
+    if st.checkbox("show number of mobiles with STORAGE above 64"):
+        st.write(data[data.Storage > 64])
+    if st.checkbox("show the mean of the price column"):
+        st.write(data.groupby('Price').mean())
+    if st.checkbox("show number of mobiles with brand SAMSUNG and battery above 4500"):
+        st.write(data[(data['Brand'] =='Samsung') & (data.Battery > 4500)])
+    if st.checkbox("show number of mobiles with brand VIVO and RAM above 4"):
+        st.write(data[(data['Brand']=='Vivo')&(data.RAM > 4)])
+    if st.checkbox("show number of mobiles with battery capacity above 4500 and storage above 128gb"):
+        st.write(data[(data.Battery >4500) & (data.Storage < 128)])
     if st.checkbox("show the mean of the battery column"):
         st.write(data.groupby('Battery').mean())
     if st.checkbox("show the mean of the Storage column"):
@@ -87,8 +87,8 @@ if uploaded_file is not None:
         st.write(data.groupby('Price').max())
     if st.checkbox("show the standard deviation value for RAM column"):
         st.write(data.RAM.std())
-    if st.checkbox("show the variance screensize column"):
-        st.write(data.ScreenSize.var())
+    if st.checkbox("show the variance Battery column"):
+        st.write(data.Battery.var())
     
     
         
