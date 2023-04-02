@@ -66,16 +66,30 @@ if uploaded_file is not None:
     if st.checkbox("show number of mobiles with RAM above 6GB "):
         st.write(data[data.RAM > 6])
     if st.checkbox("show number of mobile with RAM above 6 GB and BATTERY above 4000"):
-        st.write(data[(data.RAM >6 ) & (data.battery> 4000)])
+        st.write(data[(data.RAM >6 ) & (data.Battery> 4000)])
     if st.checkbox("show number of mobiles with STORAGE above 64 and SCREENSIZE above 6"):
-        st.write(data[(data.storage > 64) & (data.screensize > 6)])
+        st.write(data[(data.Storage > 64) & (data.ScreenSize > 6)])
     if st.checkbox("show number of mobiles below the price of 800($) dollars"):
-        st.write(data[data['price'] < 800])
+        st.write(data[data['Price'] < 800])
     if st.checkbox("show number of mobiles with brand SAMSUNG and PRICE above $500 dollars"):
-        st.write(data[(data['Brand'] =='samsung') & (data.price >500)])
+        st.write(data[(data['Brand'] =='Samsung') & (data.Price >500)])
     if st.checkbox("show number of mobiles with brand VIVO and screensize above 6.5"):
-        st.write(data[(data['Brand']=='vivo')&(data['screensize'] > 6.5)])
+        st.write(data[(data['Brand']=='Vivo')&(data.ScreenSize > 6.5)])
     if st.checkbox("show number of mobiles with battery capacity above 4500 and price below 700 dollars"):
-        st.write(data[(data['battery'] >4500) & (data['price'] < 700)])
+        st.write(data[(data.Battery >4500) & (data.Price < 700)])
+    if st.checkbox("show the mean of the battery column"):
+        st.write(data.groupby('Battery').mean())
+    if st.checkbox("show the mean of the Storage column"):
+        st.write(data.groupby('Storage').mean())
+    if st.checkbox("show the minimum value for Camera column"):
+        st.write(data.groupby('Camera').min())
+    if st.checkbox("show the maximum value for price column"):
+        st.write(data.groupby('Price').max())
+    if st.checkbox("show the standard deviation value for RAM column"):
+        st.write(data.RAM.std())
+    if st.checkbox("show the variance screensize column"):
+        st.write(data.['ScreenSize'].var())
+    
+    
         
 
