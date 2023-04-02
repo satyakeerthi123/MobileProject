@@ -16,7 +16,7 @@ if uploaded_file is not None:
     data=pd.read_csv(uploaded_file)
     st.dataframe(data)
 # Define the list of names
-    names = ["", "", "","","","","V.N.Karthik"]
+    names = ["K.Keerthi", "T.Poojitha","V.N.Karthik","G.Sruthi","K.Saran sai","N.Durga prasad","K.Sanjay","G.Sanjay"]
 
 # Add the names to the sidebar
     st.sidebar.title("Project Team Members:")
@@ -62,7 +62,9 @@ if uploaded_file is not None:
         st.write(data[data.Brand == 'Google'])
         
     if st.checkbox("Show number of times ' was exactly 128(GB)'"):
-        st.write(data[(data['Brand'] =='Oppo') & (data.Storage == 128)])
+        st.write(data[(data['Brand'] =='Oppo') & (data.Storage == 128)]) 
+    if st.checkbox("show mobile brand greater than or equal to 6GB RAM and battery capacity above 4000"):
+        st.write(data[(data.RAM >= 6) & (data.battery>4000)])
 
 
 
