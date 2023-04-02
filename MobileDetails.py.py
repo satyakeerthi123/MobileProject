@@ -66,7 +66,7 @@ if uploaded_file is not None:
     if st.checkbox("show number of mobiles with RAM above 6GB "):
         st.write(data[data.RAM > 6])
     if st.checkbox("show number of mobile with RAM above 6 GB and BATTERY above 4000"):
-        st.write(data[(data.RAM >6 ) & (data.battery> 4000)])
+        st.write(data[(data['RAM ']>6 ) & (data.battery> 4000)])
     if st.checkbox("show number of mobiles with STORAGE above 64 and SCREENSIZE above 6"):
         st.write(data[(data.storage > 64) & (data.screensize > 6)])
     if st.checkbox("show number of mobiles below the price of 800($) dollars"):
