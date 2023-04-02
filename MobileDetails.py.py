@@ -61,7 +61,7 @@ if uploaded_file is not None:
     if st.checkbox("Show number of times 'Brand is exactly Google'"):
         st.write(data[data.Brand == 'Google'])
         
-    if st.checkbox("Show number of times ' was exactly 128(GB)'"):
+    if st.checkbox("Show number of times with mobile brand oppo and was exactly 128(GB)"):
         st.write(data[(data['Brand'] =='Oppo') & (data.Storage == 128)]) 
     if st.checkbox("show number of mobiles with RAM above 6GB "):
         st.write(data[data.RAM > 6])
