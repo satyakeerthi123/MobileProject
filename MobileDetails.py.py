@@ -88,7 +88,7 @@ if uploaded_file is not None:
     if st.checkbox("show the standard deviation value for RAM column"):
         st.write(data.RAM.std())
     if st.checkbox("show the variance screensize column"):
-        st.write(data.['ScreenSize'].var())
+        st.write(data.ScreenSize.var())
     
     
         
