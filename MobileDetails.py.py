@@ -77,4 +77,5 @@ if uploaded_file is not None:
         st.write(data[(data.Brand=='vivo')&(data.screensize > 6.5)])
     if st.checkbox("show number of mobiles with battery capacity above 4500 and price below 700 dollars"):
         st.write(data[(data.battery>4500) & (data.price($) < 700)])
+        
 
