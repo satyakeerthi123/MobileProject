@@ -63,8 +63,8 @@ if uploaded_file is not None:
         
     if st.checkbox("Show number of times ' was exactly 128(GB)'"):
         st.write(data[(data['Brand'] =='Oppo') & (data.Storage == 128)]) 
-    if st.checkbox("show mobile brand greater than or equal to 6GB RAM and battery capacity above 4000"):
-        st.write(data[(data.RAM >= 6) & (data.battery>4000)])
+    if st.checkbox("show number of mobiles with RAM above 6GB "):
+        st.write(data[data.RAM > 6])
 
 
 
