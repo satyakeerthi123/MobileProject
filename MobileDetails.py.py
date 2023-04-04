@@ -63,32 +63,45 @@ if uploaded_file is not None:
         
     if st.checkbox("Show number of times with mobile brand oppo and was exactly 128(GB)"):
         st.write(data[(data['Brand'] =='Oppo') & (data.Storage == 128)]) 
+
     if st.checkbox("show number of mobiles with RAM above 6GB "):
         st.write(data[data.RAM > 6])
+
     if st.checkbox("show number of mobile with RAM above 6 GB and BATTERY above 4000"):
         st.write(data[(data.RAM >6 ) & (data.Battery> 4000)])
+
     if st.checkbox("show number of mobiles with STORAGE above 64"):
         st.write(data[data.Storage > 64])
+
     if st.checkbox("show the mean of the Camera column"):
         st.write(data.groupby('Camera').mean())
+
     if st.checkbox("show number of mobiles with brand SAMSUNG and battery above 4500"):
         st.write(data[(data['Brand'] =='Samsung') & (data.Battery > 4500)])
+
     if st.checkbox("show number of mobiles with brand VIVO and RAM above 4"):
         st.write(data[(data['Brand']=='Vivo')&(data.RAM > 4)])
+
     if st.checkbox("show number of mobiles with battery capacity above 4500 and storage above 128gb"):
         st.write(data[(data.Battery >4500) & (data.Storage < 128)])
+
     if st.checkbox("show the mean of the battery column"):
         st.write(data.groupby('Battery').mean())
+
     if st.checkbox("show the mean of the Storage column"):
         st.write(data.groupby('Storage').mean())
+
     if st.checkbox("show the minimum value for Camera column"):
         st.write(data.groupby('Camera').min())
+
     if st.checkbox("show the maximum value for price column"):
         st.write(data.groupby('Price').max())
+
     if st.checkbox("show the standard deviation value for RAM column"):
         st.write(data.RAM.std())
+
     if st.checkbox("show the variance Battery column"):
-        st.write(data.Battery.var())
+        st.write(data.Battery.var() ) 
     
     
         
